@@ -1,5 +1,5 @@
 # crawl_holiday_workday
-爬取法定节假日、法定工作日(补假日)，转换为golang代码。可准确判断某天是节假日，还是工作日。
+爬取法定节假日、法定工作日(补假日)，生成为golang代码。可准确判断某天是节假日，还是工作日
 
 ## Usage:
 1. 每年会在10~11月公告下一年的法定假日，和补假日。将下一年的公告页面URL加入python脚本的`CHINA_HOLIDAY_WORKDAY_URLS`中，即可：
