@@ -9,7 +9,7 @@ from typing import Iterator, Optional, Tuple
 import bs4
 import requests
 
-CHINA_HOLIDAYS_URLS = collections.OrderedDict({
+CHINA_HOLIDAY_WORKDAY_URLS = collections.OrderedDict({
     2019: "http://www.gov.cn/zhengce/content/2018-12/06/content_5346276.htm",
     2020: "http://www.gov.cn/zhengce/content/2019-11/21/content_5454164.htm",
     2021: "http://www.gov.cn/zhengce/content/2020-11/25/content_5564127.htm"
@@ -230,7 +230,7 @@ def parse_paper(year: int, url: str) -> Iterator[dict]:
 def fetch_holidays_workdays() -> (collections.OrderedDict, collections.OrderedDict):
     holidays, workdays = collections.OrderedDict(), collections.OrderedDict()
 
-    for year, url in CHINA_HOLIDAYS_URLS.items():
+    for year, url in CHINA_HOLIDAY_WORKDAY_URLS.items():
         for day in parse_paper(year, url):
             actual_year = str(day['date'])[:4]
 
